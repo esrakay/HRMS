@@ -31,6 +31,9 @@ public class User {
 	@Column(name = "password") 
 	private String password; 
 	
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	/*@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Candidate candidate; 
+	
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+	private Employer employer; */
 }
