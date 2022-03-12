@@ -4,13 +4,11 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hrms.core.entities.User;
 
 import lombok.AllArgsConstructor;
@@ -20,13 +18,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
 @Table(name = "employers")
 @Entity 
-public class Employer {
+public class Employer extends User{
 
-	@Id
-	@Column(name = "id")
-	private int id; 
 	
 	@Column(name = "company_name")
 	private String companyName; 
@@ -37,14 +33,16 @@ public class Employer {
 	@Column(name = "phone_number")
 	private String phoneNumber; 
 	
-	@OneToOne
+	/*@OneToOne
 	@MapsId
 	@JoinColumn(name = "id")
-	private User user; 
+	private User user; */
 	
-	/*@OneToMany(mappedBy = "employer")
+	@JsonIgnore
+	@OneToMany(mappedBy = "employer")
 	private List<VerificationCodeEmployer> verificationCodeEmployer; 
 	
+	@JsonIgnore
 	@OneToMany(mappedBy = "employer")
-	private List<EmployeeConfirmEmployer> employeeConfirmEmployer; */
+	private List<EmployeeConfirmEmployer> employeeConfirmEmployer;
 }

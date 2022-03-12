@@ -9,8 +9,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.hrms.core.entities.User;
 
 import lombok.AllArgsConstructor;
@@ -20,13 +22,14 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@PrimaryKeyJoinColumn(name = "id", referencedColumnName = "id")
 @Table(name = "employees")
 @Entity
-public class Employee {
+public class Employee extends User{
 	
-	@Id
+	/*@Id
 	@Column(name = "id")
-	private int id;
+	private int id;*/
 	
 	@Column(name = "first_name")
 	private String firstName; 
@@ -34,11 +37,12 @@ public class Employee {
 	@Column(name = "last_name")
 	private String lastName; 
 	
-	@OneToOne
+	/*@OneToOne
 	@MapsId
 	@JoinColumn(name = "id")
-	private User user; 
+	private User user; */
 	
-	/*@OneToMany(mappedBy = "employee")
-	private List<EmployeeConfirms> employeeConfirms;*/
+	@JsonIgnore
+	@OneToMany(mappedBy = "user")
+	private List<EmployeeConfirms> employeeConfirms;
 }
