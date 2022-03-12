@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hrms.business.abstracts.UserService;
-import com.hrms.core.DataResult;
-import com.hrms.core.Result;
-import com.hrms.entities.concretes.User;
+import com.hrms.core.entities.User;
+import com.hrms.core.utilities.results.DataResult;
+import com.hrms.core.utilities.results.Result;
 
 @RestController
 @RequestMapping("/api/users")
