@@ -1,4 +1,4 @@
-package com.hrms.core;
+package com.hrms.core.utilities.results;
 
 public class SuccessDataResult<T> extends DataResult<T>{
 
