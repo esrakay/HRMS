@@ -9,10 +9,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.hrms.business.abstracts.JobTitleService;
-import com.hrms.core.DataResult;
-import com.hrms.core.Result;
-import com.hrms.core.SuccessDataResult;
-import com.hrms.core.SuccessResult;
+import com.hrms.core.utilities.results.DataResult;
+import com.hrms.core.utilities.results.Result;
+import com.hrms.core.utilities.results.SuccessDataResult;
+import com.hrms.core.utilities.results.SuccessResult;
 import com.hrms.dataAccess.abstracts.JobTitleDao;
 import com.hrms.entities.concretes.JobTitle;
 

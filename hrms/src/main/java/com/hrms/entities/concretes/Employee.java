@@ -1,12 +1,17 @@
 package com.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.hrms.core.entities.User;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -33,4 +38,7 @@ public class Employee {
 	@MapsId
 	@JoinColumn(name = "id")
 	private User user; 
+	
+	/*@OneToMany(mappedBy = "employee")
+	private List<EmployeeConfirms> employeeConfirms;*/
 }

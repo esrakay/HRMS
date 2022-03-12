@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.hrms.business.abstracts.EmployeeService;
-import com.hrms.core.DataResult;
-import com.hrms.core.Result;
+import com.hrms.core.utilities.results.DataResult;
+import com.hrms.core.utilities.results.Result;
 import com.hrms.entities.concretes.Employee;
 
 @RestController
